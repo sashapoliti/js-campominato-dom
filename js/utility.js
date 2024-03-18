@@ -5,9 +5,15 @@ function createBox(content) {
   return box;
 }
 
+function generateArrayOfUniqueRandomNumber(min, max, array, arrayLength) {
+  for (let i = 0; i < arrayLength; i++) {
+    array.push(generateUniqueRandomNumber(min, max, array));
+  }
 
+  return array;
+}
 
-function generateUniqueRandomNumber (min, max, blacklist) {
+function generateUniqueRandomNumber(min, max, blacklist) {
   let isFound = false;
   let uniqueRandomNumber;
 
