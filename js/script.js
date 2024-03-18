@@ -6,6 +6,8 @@ Quando l'utente clicca su ogni cella, la cella cliccata si colora di azzurro ed 
 const playButton = document.querySelector('header button'); /* take button */
 const fieldElement = document.getElementById('field');
 const modeElement = document.getElementById('mode');
+const gameOverElement = document.getElementById('game-over');
+const pointsElement = document.getElementById('points');
 
 //console.log(createBox());
 
@@ -39,9 +41,12 @@ playButton.addEventListener('click', function() {
                     boxElement.appendChild(bombImg);
 
                     boxElement.classList.add('bomb');
+
+                    gameOverElement.classList.remove('d-none');
                 } else {                    
                     if (!pointsTaken) {
                         points += 1;
+                        pointsElement.innerHTML = points;
                         pointsTaken = true;
                         console.log(points);
                     }
@@ -73,9 +78,12 @@ playButton.addEventListener('click', function() {
                     boxElement.appendChild(bombImg);
 
                     boxElement.classList.add('bomb');
+
+                    gameOverElement.classList.remove('d-none');
                 } else {                    
                     if (!pointsTaken) {
                         points += 1;
+                        pointsElement.innerHTML = points;
                         pointsTaken = true;
                         console.log(points);
                     }
@@ -106,9 +114,12 @@ playButton.addEventListener('click', function() {
                     boxElement.appendChild(bombImg);
 
                     boxElement.classList.add('bomb');
+
+                    gameOverElement.classList.remove('d-none');
                 } else {                    
                     if (!pointsTaken) {
                         points += 1;
+                        pointsElement.innerHTML = points;
                         pointsTaken = true;
                         console.log(points);
                     }

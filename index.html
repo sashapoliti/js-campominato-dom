@@ -5,6 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <!-- favicon -->
     <link rel="shortcut icon" href="https://t3.ftcdn.net/jpg/01/77/75/60/360_F_177756081_F6p5jABO5aE9L7XcYuH05R5hVTLte6Xk.jpg" />
+    <!-- Font -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Pixelify+Sans:wght@400..700&display=swap" rel="stylesheet">
     <!-- Font Awesome -->
     <link
       rel="stylesheet"
@@ -27,11 +31,11 @@
           <img src="https://image.api.playstation.com/vulcan/ap/rnd/202211/0911/m5Klg4WKB3FYzmXLc0jmk9iB.png" alt="Logo">
           <div class=" d-flex align-items-center flex-wrap-reverse ">
             <select id="mode" class="me-4">
-              <option selected value="easy"><i class="fa-solid fa-wand-sparkles"></i> Easy</option>
-              <option value="medium"><i class="fa-solid fa-gavel"></i> Medium</option>
-              <option value="hard"><i class="fa-solid fa-skull-crossbones"></i> Hard</option>
+              <option selected value="easy"><i class="fa-solid fa-wand-sparkles"></i> easy</option>
+              <option value="medium"><i class="fa-solid fa-gavel"></i> medium</option>
+              <option value="hard"><i class="fa-solid fa-skull-crossbones"></i> hard</option>
             </select>
-            <button><i class="fa-solid fa-gamepad me-2 "></i> Play</button>
+            <button><i class="fa-solid fa-gamepad me-2 "></i> <span class="text-uppercase ">play</span></button>
           </div>
         </div>
       </header>
@@ -39,6 +43,14 @@
       <!-- main -->
       <main class="container">
         <div id="field" class="d-flex flex-wrap"></div>
+        <div id="game-over" class="d-flex flex-column  p-3 d-none">
+          <div class="h-50 text-center "><img  src="https://pngimg.com/uploads/game_over/game_over_PNG26.png" alt="Immagine Game Over"></div>
+          <div class="h-50  d-flex justify-content-between align-items-center ">
+            <img src="https://i.gifer.com/4hsr.gif" alt="Gif Esplosione">
+            <span><span class="text text-uppercase fs-3">score:</span> <br> <span>you - </span><span id="points"></span></span>
+            <img src="https://i.gifer.com/4hsr.gif" alt="Gif Esplosione">
+          </div>
+        </div>
       </main>
 
       <!-- footer -->

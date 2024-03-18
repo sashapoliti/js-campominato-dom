@@ -2,6 +2,7 @@
 body {
     background-color: #4B2786;
     color: rgb(255, 255, 255);
+    font-family: "Pixelify Sans", sans-serif;
     font-weight: 500;
     font-size: 1em;
 }
@@ -72,6 +73,17 @@ main>div#field .box.medium {
 }
 main>div#field .box.hard {
     width: calc(100% / 7);
+}
+main>div#game-over {
+    width: 500px;
+    height: 250px;
+    position: fixed;
+    top: calc(50% - 100px);
+    left: calc(50% - 250px);
+    background-color: #5f007ca6;
+}
+#game-over img {
+    height: 100%;
 }
 
 /* footer */
