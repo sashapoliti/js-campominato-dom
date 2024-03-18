@@ -7,6 +7,8 @@ const playButton = document.querySelector('header button'); /* take button */
 const fieldElement = document.getElementById('field');
 const modeElement = document.getElementById('mode');
 
+let bombClicked = false
+
 //console.log(createBox());
 
 playButton.addEventListener('click', function() {
@@ -25,12 +27,11 @@ playButton.addEventListener('click', function() {
     
             //box clickable
             boxElement.addEventListener('click', function() {
+                if (bombClicked === true) { return };
+
                 if (bombs.includes(i+1)) {
+                    bombClicked = true;
                     boxElement.classList.add('bomb');
-                    const boxes = document.querySelectorAll('box');
-                    boxes.forEach('click', function(e) {
-                        e.stopPropagation();
-                    });
                 } else {
                     boxElement.classList.add('active');  
                 }                
