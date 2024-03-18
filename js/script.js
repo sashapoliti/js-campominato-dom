@@ -27,6 +27,10 @@ playButton.addEventListener('click', function() {
             boxElement.addEventListener('click', function() {
                 if (bombs.includes(i+1)) {
                     boxElement.classList.add('bomb');
+                    const boxes = document.querySelectorAll('box');
+                    boxes.forEach('click', function(e) {
+                        e.stopPropagation();
+                    });
                 } else {
                     boxElement.classList.add('active');  
                 }                
