@@ -59,10 +59,28 @@ playButton.addEventListener('click', function() {
             //console.log(boxElement);
             fieldElement.appendChild(boxElement);
     
-            //box clickable
+            //box clickable            
+            let pointsTaken = false; // no multiple click
             boxElement.addEventListener('click', function() {
-                boxElement.classList.add('active');
-                console.log(i + 1);
+                if (bombClicked) { return };
+
+                if (bombs.includes(i+1)) {
+                    bombClicked = true;
+
+                    const bombImg = document.createElement('img');
+                    bombImg.setAttribute('src', 'https://img1.picmix.com/output/stamp/normal/4/5/3/4/2334354_11d70.gif');
+                    bombImg.setAttribute('alt', 'Gif bomba');
+                    boxElement.appendChild(bombImg);
+
+                    boxElement.classList.add('bomb');
+                } else {                    
+                    if (!pointsTaken) {
+                        points += 1;
+                        pointsTaken = true;
+                        console.log(points);
+                    }
+                    boxElement.classList.add('active');
+                }                
             })
         }  
     } else /* if mode === easy */ {
@@ -74,12 +92,30 @@ playButton.addEventListener('click', function() {
             //console.log(boxElement);
             fieldElement.appendChild(boxElement);
     
-            //box clickable
+            //box clickable            
+            let pointsTaken = false; // no multiple click
             boxElement.addEventListener('click', function() {
-                boxElement.classList.add('active');
-                console.log(i + 1);
+                if (bombClicked) { return };
+
+                if (bombs.includes(i+1)) {
+                    bombClicked = true;
+
+                    const bombImg = document.createElement('img');
+                    bombImg.setAttribute('src', 'https://img1.picmix.com/output/stamp/normal/4/5/3/4/2334354_11d70.gif');
+                    bombImg.setAttribute('alt', 'Gif bomba');
+                    boxElement.appendChild(bombImg);
+
+                    boxElement.classList.add('bomb');
+                } else {                    
+                    if (!pointsTaken) {
+                        points += 1;
+                        pointsTaken = true;
+                        console.log(points);
+                    }
+                    boxElement.classList.add('active');
+                }                
             })
-        }
+        }  
     }
 })
 
