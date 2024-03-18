@@ -85,6 +85,10 @@ main>div#game-over {
 #game-over img {
     height: 100%;
 }
+#points {
+    color: #EB0A54;
+    font-size: 1.2rem;
+}
 
 /* footer */
 footer {

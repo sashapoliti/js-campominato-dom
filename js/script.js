@@ -15,6 +15,7 @@ playButton.addEventListener('click', function() {
     fieldElement.innerHTML = ''; //reset the field
     let bombClicked = false; //reset bombs
     let points = 0; //reset points
+    gameOverElement.classList.add('d-none'); //reset game over
 
     const mode = modeElement.value;
     if (mode === 'medium') {
@@ -42,6 +43,7 @@ playButton.addEventListener('click', function() {
 
                     boxElement.classList.add('bomb');
 
+                    pointsElement.innerHTML = points;
                     gameOverElement.classList.remove('d-none');
                 } else {                    
                     if (!pointsTaken) {
@@ -79,6 +81,7 @@ playButton.addEventListener('click', function() {
 
                     boxElement.classList.add('bomb');
 
+                    pointsElement.innerHTML = points;
                     gameOverElement.classList.remove('d-none');
                 } else {                    
                     if (!pointsTaken) {
@@ -115,6 +118,7 @@ playButton.addEventListener('click', function() {
 
                     boxElement.classList.add('bomb');
 
+                    pointsElement.innerHTML = points;
                     gameOverElement.classList.remove('d-none');
                 } else {                    
                     if (!pointsTaken) {
