@@ -14,6 +14,7 @@ playButton.addEventListener('click', function() {
 
     const mode = modeElement.value;
     if (mode === 'medium') {
+        
         for (let i = 0; i < 81; i++) {
             const boxElement = createBox(i + 1);
             boxElement.classList.add('medium')
