@@ -7,12 +7,12 @@ const playButton = document.querySelector('header button'); /* take button */
 const fieldElement = document.getElementById('field');
 const modeElement = document.getElementById('mode');
 
-let bombClicked = false
-
 //console.log(createBox());
 
 playButton.addEventListener('click', function() {
     fieldElement.innerHTML = ''; //reset the field
+    let bombClicked = false; //reset bombs
+    let points = 0; //reset points
 
     const mode = modeElement.value;
     if (mode === 'medium') {
@@ -25,15 +25,22 @@ playButton.addEventListener('click', function() {
             //console.log(boxElement);
             fieldElement.appendChild(boxElement);
     
-            //box clickable
+            //box clickable            
+            let pointsTaken = false; // no multiple click
             boxElement.addEventListener('click', function() {
-                if (bombClicked === true) { return };
+                if (bombClicked) { return };
 
                 if (bombs.includes(i+1)) {
                     bombClicked = true;
                     boxElement.classList.add('bomb');
                 } else {
-                    boxElement.classList.add('active');  
+                    
+                    if (!pointsTaken) {
+                        points += 1;
+                        pointsTaken = true;
+                        console.log(points);
+                    }
+                    boxElement.classList.add('active');
                 }                
             })
         }  
