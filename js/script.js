@@ -20,7 +20,7 @@ playButton.addEventListener('click', function() {
         bombs = generateArrayOfUniqueRandomNumber(1, 81, bombs, 16);
         console.log(bombs);
         for (let i = 0; i < 81; i++) {
-            const boxElement = createBox(i + 1);
+            const boxElement = createBox();
             boxElement.classList.add('medium')
             //console.log(boxElement);
             fieldElement.appendChild(boxElement);
@@ -32,9 +32,14 @@ playButton.addEventListener('click', function() {
 
                 if (bombs.includes(i+1)) {
                     bombClicked = true;
+
+                    const bombImg = document.createElement('img');
+                    bombImg.setAttribute('src', 'https://img1.picmix.com/output/stamp/normal/4/5/3/4/2334354_11d70.gif');
+                    bombImg.setAttribute('alt', 'Gif bomba');
+                    boxElement.appendChild(bombImg);
+
                     boxElement.classList.add('bomb');
-                } else {
-                    
+                } else {                    
                     if (!pointsTaken) {
                         points += 1;
                         pointsTaken = true;
@@ -49,7 +54,7 @@ playButton.addEventListener('click', function() {
         bombs = generateArrayOfUniqueRandomNumber(1, 49, bombs, 16);
         console.log(bombs);
         for (let i = 0; i < 49; i++) {
-            const boxElement = createBox(i + 1);
+            const boxElement = createBox();
             boxElement.classList.add('hard')
             //console.log(boxElement);
             fieldElement.appendChild(boxElement);
@@ -65,7 +70,7 @@ playButton.addEventListener('click', function() {
         bombs = generateArrayOfUniqueRandomNumber(1, 100, bombs, 16);
         console.log(bombs);
         for (let i = 0; i < 100; i++) {
-            const boxElement = createBox(i + 1);
+            const boxElement = createBox();
             //console.log(boxElement);
             fieldElement.appendChild(boxElement);
     

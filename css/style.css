@@ -64,6 +64,9 @@ main>div#field .box.active {
 main>div#field .box.bomb {
     background-color: #eb0954;
 }
+main>div#field .box.bomb img {
+    width: 100%;
+}
 main>div#field .box.medium {
     width: calc(100% / 9);
 }

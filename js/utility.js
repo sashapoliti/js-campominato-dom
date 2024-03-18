@@ -1,6 +1,5 @@
-function createBox(content) {
+function createBox() {
   const box = document.createElement('div');
-  box.innerHTML = `<span>${content}</span>`;
   box.classList.add('box', 'd-flex', 'justify-content-center', 'align-items-center');
   return box;
 }
