@@ -61,6 +61,9 @@ main>div#field .box:hover {
 main>div#field .box.active {
     background-color: #9A0FC1;
 }
+main>div#field .box.bomb {
+    background-color: #eb0954;
+}
 main>div#field .box.medium {
     width: calc(100% / 9);
 }

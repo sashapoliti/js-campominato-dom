@@ -14,7 +14,9 @@ playButton.addEventListener('click', function() {
 
     const mode = modeElement.value;
     if (mode === 'medium') {
-        
+        let bombs = [];
+        bombs = generateArrayOfUniqueRandomNumber(1, 81, bombs, 16);
+        console.log(bombs);
         for (let i = 0; i < 81; i++) {
             const boxElement = createBox(i + 1);
             boxElement.classList.add('medium')
@@ -23,11 +25,17 @@ playButton.addEventListener('click', function() {
     
             //box clickable
             boxElement.addEventListener('click', function() {
-                boxElement.classList.add('active');
-                console.log(i + 1);
+                if (bombs.includes(i+1)) {
+                    boxElement.classList.add('bomb');
+                } else {
+                    boxElement.classList.add('active');  
+                }                
             })
         }  
     } else if (mode === 'hard') {
+        let bombs = [];
+        bombs = generateArrayOfUniqueRandomNumber(1, 49, bombs, 16);
+        console.log(bombs);
         for (let i = 0; i < 49; i++) {
             const boxElement = createBox(i + 1);
             boxElement.classList.add('hard')
@@ -41,6 +49,9 @@ playButton.addEventListener('click', function() {
             })
         }  
     } else /* if mode === easy */ {
+        let bombs = [];
+        bombs = generateArrayOfUniqueRandomNumber(1, 100, bombs, 16);
+        console.log(bombs);
         for (let i = 0; i < 100; i++) {
             const boxElement = createBox(i + 1);
             //console.log(boxElement);
