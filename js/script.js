@@ -52,10 +52,17 @@ playButton.addEventListener('click', function() {
                     if (!pointsTaken) {
                         points += 1;
                         pointsElement.innerHTML = points;
+                        winPointsElement.innerHTML = points;
                         pointsTaken = true;
                         console.log(points);
                     }
                     boxElement.classList.add('active');
+                    if (points === 81 - 16) {
+                        winElement.classList.remove('d-none');
+                        bombClicked = true;
+
+                        return;
+                    }
                 }                
             })
         }  
@@ -129,6 +136,7 @@ playButton.addEventListener('click', function() {
                     boxElement.classList.add('bomb');
 
                     pointsElement.innerHTML = points;
+                    winPointsElement.innerHTML = points;
                     gameOverElement.classList.remove('d-none');
                 } else {                    
                     if (!pointsTaken) {
@@ -138,6 +146,12 @@ playButton.addEventListener('click', function() {
                         console.log(points);
                     }
                     boxElement.classList.add('active');
+                    if (points === 100 - 16) {
+                        winElement.classList.remove('d-none');
+                        bombClicked = true;
+
+                        return;
+                    }
                 }                
             })
         }  
