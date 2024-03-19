@@ -7,7 +7,9 @@ const playButton = document.querySelector('header button'); /* take button */
 const fieldElement = document.getElementById('field');
 const modeElement = document.getElementById('mode');
 const gameOverElement = document.getElementById('game-over');
+const winElement = document.getElementById('win');
 const pointsElement = document.getElementById('points');
+const winPointsElement = document.getElementById('win-points')
 
 //console.log(createBox());
 
@@ -16,6 +18,7 @@ playButton.addEventListener('click', function() {
     let bombClicked = false; //reset bombs
     let points = 0; //reset points
     gameOverElement.classList.add('d-none'); //reset game over
+    winElement.classList.add('d-none'); //reset win
 
     const mode = modeElement.value;
     if (mode === 'medium') {
@@ -87,10 +90,17 @@ playButton.addEventListener('click', function() {
                     if (!pointsTaken) {
                         points += 1;
                         pointsElement.innerHTML = points;
+                        winPointsElement.innerHTML = points;
                         pointsTaken = true;
                         console.log(points);
                     }
                     boxElement.classList.add('active');
+                    if (points === 49 - 16) {
+                        winElement.classList.remove('d-none');
+                        bombClicked = true;
+
+                        return;
+                    }
                 }                
             })
         }  

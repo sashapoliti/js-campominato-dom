@@ -74,7 +74,8 @@ main>div#field .box.medium {
 main>div#field .box.hard {
     width: calc(100% / 7);
 }
-main>div#game-over {
+main>div#game-over,
+main>div#win {
     width: 500px;
     height: 250px;
     position: fixed;
@@ -82,10 +83,12 @@ main>div#game-over {
     left: calc(50% - 250px);
     background-color: #5f007ca6;
 }
-#game-over img {
+#game-over img,
+#win img {
     height: 100%;
 }
-#points {
+#points,
+#win-points {
     color: #EB0A54;
     font-size: 1.2rem;
 }
