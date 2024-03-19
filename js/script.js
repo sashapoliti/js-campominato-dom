@@ -39,15 +39,21 @@ playButton.addEventListener('click', function() {
                 if (bombs.includes(i+1)) {
                     bombClicked = true;
 
-                    const bombImg = document.createElement('img');
-                    bombImg.setAttribute('src', 'https://img1.picmix.com/output/stamp/normal/4/5/3/4/2334354_11d70.gif');
-                    bombImg.setAttribute('alt', 'Gif bomba');
-                    boxElement.appendChild(bombImg);
-
-                    boxElement.classList.add('bomb');
-
                     pointsElement.innerHTML = points;
                     gameOverElement.classList.remove('d-none');
+
+                    const boxes = document.querySelectorAll('.box');
+                    for (let i = 0; i < boxes.length; i++) {
+                       if (bombs.includes(i + 1)) {
+                        const bombImg = document.createElement('img');
+                        bombImg.setAttribute('src', 'https://img1.picmix.com/output/stamp/normal/4/5/3/4/2334354_11d70.gif');
+                        bombImg.setAttribute('alt', 'Gif bomba');
+                        boxes[i].appendChild(bombImg);
+
+                        boxes[i].classList.add('bomb');
+                        } 
+                    }
+                    
                 } else {                    
                     if (!pointsTaken) {
                         points += 1;
